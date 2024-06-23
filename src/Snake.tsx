@@ -21,14 +21,12 @@ export default function Snake(props: {
 
     // boundary check
     if (newPosition[0] < 0 || newPosition[0] > 9 || newPosition[1] < 0 || newPosition[1] > 9) {
-      console.log('hit wall');
       setGameOver(true)
       return
     }
 
     // self collision check
     if (props.snakePosition.slice(1).some((position) => position[0] === newPosition[0] && position[1] === newPosition[1])) {
-      console.log('hit self');
       setGameOver(true)
       return
     }
@@ -60,7 +58,7 @@ export default function Snake(props: {
 
 
   const handleKeyDown = (e: KeyboardEvent) => {
-    
+
     switch (e.key) {
       case 'ArrowUp':
         setDirection([0, -1])
@@ -81,13 +79,11 @@ export default function Snake(props: {
   }, [])
 
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     setTime((time) => time + delta)
-    
-    
+
+
     if (time > clamp(0.5 - (props.score / 100), 0.1, 0.5) && !props.gameOver) {
-      console.log(time);
-      
       handleMove()
       setTime(0)
     }

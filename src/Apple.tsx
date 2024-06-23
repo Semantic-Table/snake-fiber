@@ -1,6 +1,6 @@
 
-export default function Apple(props: { applePosition: [number, number], setApplePosition: (position: [number, number]) => void }) {
-  const { setApplePosition, applePosition } = props
+export default function Apple(props: { applePosition: [number, number] }) {
+  const { applePosition } = props
 
 
   return <>

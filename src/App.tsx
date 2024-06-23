@@ -30,7 +30,7 @@ function App() {
         <directionalLight position={[5, 5, 5]} intensity={2} />
         <Board />
         <Snake gameOver={gameOver} snakePosition={snakePosition} setSnakePosition={setSnakePosition} setGameOver={setGameOver} applePosition={applePosition} setApplePosition={setApplePosition} score={score} setScore={setScore} />
-        <Apple applePosition={applePosition} setApplePosition={setApplePosition} />
+        <Apple applePosition={applePosition} />
       </Canvas>
     </>
   )
